@@ -12,13 +12,13 @@ import invoice from "../../../asstes/Icons/basil_invoice-outline.png";
 const useSideNav = () => {
 
 const NavLinkData = [
-  { title: "Dashboard", icon: dashboard, nested: false, link: "/dashboard" },
-  { title: "Accounting", icon: account, nested: true, link: null },
-  { title: "Banking", icon: bank, nested: false, link: "/banking" },
-  { title: "Reports", icon: report, nested: true, link: null },
-  { title: "Contacts", icon: contacts, nested: true, link: null },
-  { title: "Invoicing", icon: invoice, nested: true, link: null },
-  { title: "Queries", icon: help, nested: false, link: "/queries" },
+  { title: "Dashboard", icon: dashboard, nested: false, link: "/dashboard",activeMainLink:"/dashboard" },
+  { title: "Accounting", icon: account, nested: true, link: null  ,activeMainLink: "/accounting"},
+  { title: "Banking", icon: bank, nested: false, link: "/banking"  ,activeMainLink: "/banking"},
+  { title: "Reports", icon: report, nested: true, link: null  ,activeMainLink: "/reports"},
+  { title: "Contacts", icon: contacts, nested: true, link: null  ,activeMainLink: "/contacts"},
+  { title: "Invoicing", icon: invoice, nested: true, link: null  ,activeMainLink: "/invoicing"},
+  { title: "Queries", icon: help, nested: false, link: "/queries"  ,activeMainLink: "/queries"},
 ];
 
 const nestedLinks = [
@@ -75,7 +75,7 @@ const nestedLinks = [
 
 const [showNested, setShowNested] = useState(false);
   const [hoveredNav, setHoveredNav] = useState(null);
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("Chart of Accounts");
   const navigate = useNavigate();
 
   const handleNavigation = (link, title) => {

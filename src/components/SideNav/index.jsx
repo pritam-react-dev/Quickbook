@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import logo from "../../asstes/Icons/2jPSRUY1RbYAIJFAy94lLMnHI2x 3.png";
 import help from "../../asstes/Icons/ph_question.png";
 import useSideNav from "./Hooks/useSideNav";
-
+import { useLocation } from "react-router-dom";
 const SideNav = () => {
+  const location = useLocation();
+  const firstSegment = "/" + location?.pathname?.split("/")[1];
   const { data, method } = useSideNav();
   const { NavLinkData, activeLink, showNested } = data;
   const {
@@ -12,6 +14,8 @@ const SideNav = () => {
     handleNavigation,
     filteredNestedLinks,
   } = method;
+
+  console.log(activeLink, "acti");
 
   return (
     <section className="d-flex flex-column justify-content-between h-100">
@@ -23,12 +27,12 @@ const SideNav = () => {
 
         {/* -----------Sidebar Navigation---------- */}
         <div>
-          {NavLinkData.map(({ title, icon, nested, link }) => (
+          {NavLinkData.map(({ title, icon, nested, link, activeMainLink }) => (
             <div
               key={title}
-              className={`text-center sidenav-sections py-2 ${
-                activeLink === title ? "active" : ""
-              }`}
+              className={`text-center sidenav-sections py-2 
+                ${activeMainLink === firstSegment ? "mainActive" : ""}
+              `}
               onClick={() => handleNavigation(link, title)}
               onMouseEnter={() => {
                 if (nested) {

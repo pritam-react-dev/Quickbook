@@ -120,7 +120,8 @@ ul li {
   position: relative;
 }
 
-.main_layout .sidebar .sidenav-sections:hover {
+.main_layout .sidebar .sidenav-sections:hover,
+.main_layout .sidebar .sidenav-sections.mainActive {
   border-left: 4px solid var(--white);
   background: var(--light-them);
 }
@@ -128,7 +129,7 @@ ul li {
 .nested_container {
   position: absolute;
   top: 0;
-  left: 84px;
+  left: 81px;
   width: 200px;
   height: 100%;
   background: var(--light-them);
@@ -190,4 +191,128 @@ ul li {
   background: #F6F6F6;
   padding: 0px 3px;
   border-radius: 4px;
+}
+
+/* ----------- Invoice Style-------------- */
+.invoice-wrapper {
+  background-color: #fbe6c2;
+  padding: 3.5rem 4rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 0px 22px;
+}
+
+.invoice-card {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #0c5d56;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invoice-header h1 {
+  color: #0c5d56;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  text-align: right;
+}
+
+.logo-icon {
+  display: flex;
+  font-size: 2rem;
+  color: #0c5d56;
+  justify-content: center;
+  align-items: center;
+}
+
+.invoice-hr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.invoice-hr .dot {
+  width: 5px;
+  height: 5px;
+  background-color: #0c5d56;
+  border-radius: 50%;
+}
+
+.invoice-hr hr {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #0c5d56;
+  margin: 0;
+}
+
+
+.bill-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  font-size: 0.7rem;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0;
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 0.1rem;
+  text-align: left;
+  font-size: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer p {
+  font-size: 0.6rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.totals {
+  text-align: right;
+}
+
+.totals div {
+  margin-bottom: 0.5rem;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.bottom-bar {
+  background: #0c5d56;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
 }
